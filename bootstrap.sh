@@ -1,9 +1,10 @@
-#!/bin/zsh
-ln -s /Users/basti/dotfiles/.zsh /Users/basti
-ln -s /Users/basti/dotfiles/.zshrc /Users/basti
-ln -s /Users/basti/dotfiles/.vim /Users/basti
-ln -s /Users/basti/dotfiles/.vimrc /Users/basti
-ln -s /Users/basti/dotfiles/.tmux.conf /Users/basti
-ln -s /Users/basti/dotfiles/.zlogin /Users/basti
-ln -s /Users/basti/dotfiles/.gvimrc /Users/basti
-#git submodule init && git submodule update
+#!/bin/sh
+ln -s ~/dotfiles/.zsh ~
+ln -s ~/dotfiles/.zshrc ~
+ln -s ~/dotfiles/.vim ~
+ln -s ~/dotfiles/.vimrc ~
+ln -s ~/dotfiles/.tmux.conf ~
+ln -s ~/dotfiles/.zlogin ~
+ln -s ~/dotfiles/.gvimrc ~
+git submodule init && git submodule update
+mkdir ~/.vimbackup
