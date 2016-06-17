@@ -1,5 +1,7 @@
 set nocompatible
 
+let mapleader=','
+
 " Initialize Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
