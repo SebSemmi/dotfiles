@@ -6,5 +6,6 @@ ln -s ~/dotfiles/.vimrc ~
 ln -s ~/dotfiles/.tmux.conf ~
 ln -s ~/dotfiles/.zlogin ~
 ln -s ~/dotfiles/.gvimrc ~
+ln -s ~/dotfiles/.gitignore_global ~
 git submodule init && git submodule update
-mkdir ~/.vimbackup
+mkdir ~/.vim/backups

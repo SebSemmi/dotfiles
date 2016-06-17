@@ -56,8 +56,8 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 set nofoldenable
 
 " Directories for swp files
-set backupdir=~/.vimbackup
-set directory=~/.vimbackup
+set backupdir=~/.vim/backups
+set directory=~/.vim/baqckups
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
