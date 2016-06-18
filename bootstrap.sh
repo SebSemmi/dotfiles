@@ -7,5 +7,6 @@ ln -s ~/dotfiles/.tmux.conf ~
 ln -s ~/dotfiles/.zlogin ~
 ln -s ~/dotfiles/.gvimrc ~
 ln -s ~/dotfiles/.gitignore_global ~
-git submodule init && git submodule update
 mkdir ~/.vim/backups
+git submodule init && git submodule update
+git config --global core.excludesfile ~/.gitignore_global
