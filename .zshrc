@@ -8,19 +8,6 @@ for config_file ($ZSH/lib/*.zsh) source $config_file
 autoload -U compinit
 compinit -i
 
-# Visual Studio Code
-function code {  
-    if [[ $# = 0 ]]
-    then
-        open -a "Visual Studio Code"
-    else
-        local argPath="$1"
-        [[ $1 = /* ]] && argPath="$1" || argPath="$PWD/${1#./}"
-        open -a "Visual Studio Code" "$argPath"
-    fi
-}
-
-# Alias
 alias ls='ls -a'
 alias zshconfig="mate ~/.zshrc"
 alias launchpadreset="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
