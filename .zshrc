@@ -25,3 +25,4 @@ alias ls='ls -a'
 alias zshconfig="mate ~/.zshrc"
 alias launchpadreset="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
 alias osxinstaller="sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ OS\ X\ El\ Capitan --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app --nointeraction"
+alias ll="ls -lahL"
