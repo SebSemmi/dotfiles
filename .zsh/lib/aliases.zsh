@@ -1,4 +1,4 @@
-alias ll='ls -la'
+alias ll='ls -lahL'
 alias lh='ls -lah'
 alias ...='cd ../..'
 alias launchpadreset="defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock"
