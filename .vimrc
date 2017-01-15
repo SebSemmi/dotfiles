@@ -1,3 +1,5 @@
+let mapleader=" "
+
 set nocompatible
 
 " Initialize Pathogen
