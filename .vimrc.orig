@@ -1,5 +1,7 @@
 set nocompatible
 
+let mapleader=','
+
 " Initialize Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -56,6 +58,13 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " Disable code folding
 set nofoldenable
 
+<<<<<<< HEAD
+" Directories for swp files
+set backupdir=~/.vim/backups
+set directory=~/.vim/backups
+
+=======
+>>>>>>> 3a3d0bc9a3eed99ba5b125b33d8b396da582e96b
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
