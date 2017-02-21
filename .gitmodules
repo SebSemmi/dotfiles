@@ -3,10 +3,6 @@
         path = .vim/bundle/vim-pathogen
         url = https://github.com/tpope/vim-pathogen.git
 
-[submodule ".vim/bundle/ctrlp.vim"]
-        path = .vim/bundle/ctrlp.vim
-        url = https://github.com/kien/ctrlp.vim.git
-
 [submodule ".vim/bundle/ack.vim"]
         path = .vim/bundle/ack.vim
         url = https://github.com/mileszs/ack.vim.git
@@ -27,10 +23,6 @@
         path = .vim/bundle/supertab
         url = https://github.com/ervandew/supertab.git
 
-[submodule ".vim/bundle/vimerl"]
-        path = .vim/bundle/vimerl
-        url = https://github.com/jimenezrick/vimerl.git
-
 [submodule ".vim/bundle/markdown"]
         path = .vim/bundle/vim-markdown
         url = https://github.com/tpope/vim-markdown.git
@@ -46,9 +38,7 @@
 [submodule ".vim/bundle/JavaScript-Indent"]
         path = .vim/bundle/JavaScript-Indent
         url = https://github.com/vim-scripts/JavaScript-Indent.git
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
+
 [submodule "dash.vim"]
-	path = .vim/bundle/dash.vim
-	url = https://github.com/rizzatti/dash.vim.git
+        path = .vim/bundle/dash.vim
+        url = https://github.com/rizzatti/dash.vim.git
