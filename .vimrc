@@ -1,37 +1,113 @@
-let mapleader=" "
+" Launch Config {{{
 set nocompatible
-
+set encoding=utf-8
 " Initialize Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
-
-" Enable syntax highlighting
-syntax on
-filetype plugin indent on
-
-" Colorscheme see https://github.com/hukl/Smyck-Color-Scheme
-color smyck
-
-" Add line numbers
-set number
-set ruler
-
-" Set encoding
-set encoding=utf-8
-
-" Whitespace stuff
-set nowrap
-set tabstop=2
+" }}}
+" Colors {{{
+syntax enable           " enable syntax processing
+color smyck             " Colorscheme see https://github.com/hukl/Smyck-Color-Scheme
+" }}}
+" Spaces & Tabs {{{
+set tabstop=2           " 2 space tab
+set softtabstop=2       " 2 space tab
 set shiftwidth=2
-set softtabstop=2
-set expandtab
-
-" Show trailing spaces and highlight hard tabs
+set expandtab           " use spaces for tabs
+set modelines=1
+filetype indent on
+filetype plugin on
+set autoindent
+set nowrap
 set list listchars=tab:»·,trail:·
-
-" allow backspacing over everything in insert mode
+" }}}
+" UI Layout {{{
+set number              " show line numbers
+set ruler               " column and line numbers
+"set showcmd             " show command in bottom bar
+set cursorline        " highlight current line
+set wildmenu            " display all matching files when tab-completion
+set showmatch           " higlight matching parenthesis
+:au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)    " Highlight characters behind the 80 chars margin
+" }}}
+" Searching {{{
+set ignorecase          " ignore case when searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight all matches
+set path+=**            " search down into subfolders, provides tab-completion for all file-related tasks
+" }}}
+" Folding {{{
+set foldenable          " don't fold files by default on open
+set foldlevelstart=10   " start with fold level of 10
+set foldnestmax=10      " max 10 depth
+set foldmethod=indent   " fold based on indent level
+" }}}
+" Line Shortcuts {{{
+" }}}
+" Leader Shortcuts {{{
+let mapleader=" "
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>s :mksession<CR>
+nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
+nnoremap <leader>a :Ag
+" Map Ctrl+l to clear highlighted searches
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+" }}}
+" CtrlP {{{
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|target/|\.(o|swp|pyc|egg)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.eunit$',
+  \ 'file': '\.exe$\|\.so$\|\.dll\|\.beam$\|\.DS_Store$'
+  \ }
+" }}}
+" NERDTree {{{
+let NERDTreeIgnore = ['\.pyc$', 'build', 'venv', 'egg', 'egg-info/', 'dist', 'docs']
+let NERDTreeShowHidden=1
+" }}}
+" Syntastic {{{
+let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_ignore_files = ['.java$']
+" let g:syntastic_check_on_open=1
+" }}}
+" AutoGroups {{{
+augroup configgroup
+    autocmd!
+    autocmd VimEnter * highlight clear SignColumn
+    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.rb :call <SID>StripTrailingWhitespaces()
+    autocmd BufEnter *.cls setlocal filetype=java
+    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufEnter Makefile setlocal noexpandtab
+    autocmd BufEnter *.sh setlocal tabstop=2
+    autocmd BufEnter *.sh setlocal shiftwidth=2
+    autocmd BufEnter *.sh setlocal softtabstop=2
+    autocmd BufEnter *.py setlocal softtabstop=4
+    autocmd BufEnter *.py setlocal tabstop=4
+    autocmd BufEnter *.py setlocal shiftwidth=4
+    autocmd BufEnter *.py setlocal textwidth=79
+augroup END
+" Close window if last remaining window is NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" }}}
+" Tmux {{{
+" }}}
+" Misc {{{
+set ttyfast                     " faster redraw
 set backspace=indent,eol,start
-
+" }}}
+" Backups {{{
+set noswapfile
+set nobackup
+set nowritebackup
+" }}}
+" MacVim {{{
+set guioptions-=r
+set guioptions-=L
+" }}}
+" Custom Funktions {{{
 " Strip trailing whitespaces on each save
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
@@ -40,54 +116,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-" Close window if last remaining window is NerdTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Search related settings
-set incsearch
-set hlsearch
-
-" Map Ctrl+l to clear highlighted searches
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-" Highlight characters behind the 80 chars margin
-:au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)
-
-" Disable code folding
-set nofoldenable
-
-" NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
-
-" make uses real tabs
-au FileType make set noexpandtab
-
-" Erlang uses 4 spaces
-au FileType erlang set softtabstop=4 tabstop=4 shiftwidth=4
-
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
-
-" add json syntax highlighting
-au BufNewFile,BufRead *.json set ft=javascript
-
-" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
-
-" ctrp custom ignores
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.eunit$',
-  \ 'file': '\.exe$\|\.so$\|\.dll\|\.beam$\|\.DS_Store$'
-  \ }
-
-" Go Settings
-let g:go_fmt_command = "goimports"
-
-" Use Ag instead of Ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
+" }}}
 
-" Disable Swap and Backup Files
-set noswapfile
-set nobackup
+" vim:foldmethod=marker:foldlevel=0
