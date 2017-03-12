@@ -32,8 +32,14 @@ set scrolloff=2         " minimum lines above/below cursor
 " }}}
 " Status Bar {{{
 set laststatus=2                  " always show status bar
-set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
-set showcmd             " show command in bottom bar
+set statusline=%F%m%r%h%w\ %y\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
+"set showcmd             " show command in bottom bar
+
+" highlight the status bar when in insert mode
+if version >= 700
+  au InsertEnter * hi StatusLine ctermfg=16 ctermbg=10
+  au InsertLeave * hi StatusLine ctermbg=8 ctermfg=15
+endif
 " }}}
 " Searching {{{
 set ignorecase          " ignore case when searching
