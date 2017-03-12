@@ -24,11 +24,16 @@ set list listchars=tab:»·,trail:·
 " UI Layout {{{
 set number              " show line numbers
 set ruler               " column and line numbers
-"set showcmd             " show command in bottom bar
 set cursorline        " highlight current line
 set wildmenu            " display all matching files when tab-completion
 set showmatch           " higlight matching parenthesis
 :au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)    " Highlight characters behind the 80 chars margin
+set scrolloff=2         " minimum lines above/below cursor
+" }}}
+" Status Bar {{{
+set laststatus=2                  " always show status bar
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
+set showcmd             " show command in bottom bar
 " }}}
 " Searching {{{
 set ignorecase          " ignore case when searching
