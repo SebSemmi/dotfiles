@@ -109,6 +109,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 set ttyfast                     " faster redraw
 set backspace=indent,eol,start
 " }}}
+" Git-Gutter {{{
+set signcolumn=yes
+set updatetime=250
+" }}}
 " Backups {{{
 set noswapfile
 set nobackup
