@@ -4,6 +4,7 @@ set encoding=utf-8
 " Initialize Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+set rtp+=/usr/local/opt/fzf
 " }}}
 " Colors {{{
 syntax enable           " enable syntax processing
