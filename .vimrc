@@ -23,6 +23,7 @@ set list listchars=tab:»·,trail:·
 " }}}
 " UI Layout {{{
 set number              " show line numbers
+"set relativenumber      " show relative line numbers
 set ruler               " column and line numbers
 set cursorline        " highlight current line
 set wildmenu            " display all matching files when tab-completion
