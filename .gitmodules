@@ -47,3 +47,9 @@
 [submodule ".vim/bundle/auto-pairs"]
 	path = .vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "bin"]
+	path = bin
+	url = git@github.com:SebSemmi/bin.git
+[submodule "scripts"]
+	path = scripts
+	url = git@github.com:SebSemmi/scripts.git

@@ -11,5 +11,7 @@ ln -sF ~/dotfiles/.zlogin ~
 ln -sF ~/dotfiles/.gvimrc ~
 ln -sF ~/dotfiles/.gitignore_global ~
 ln -sF ~/dotfiles/.config ~
+ln -sF ~/dotfiles/scripts ~
+ln -sF ~/dotfiles/bin ~
 git submodule update --init
 git config --global core.excludesfile ~/.gitignore_global
