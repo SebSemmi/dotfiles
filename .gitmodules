@@ -20,9 +20,6 @@
 [submodule ".vim/bundle/markdown"]
 	path = .vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/vim-javascript-syntax"]
 	path = .vim/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
@@ -53,3 +50,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = git@github.com:SebSemmi/scripts.git
+[submodule ".vim/bundle/neomake"]
+	path = .vim/bundle/neomake
+	url = https://github.com/neomake/neomake.git
