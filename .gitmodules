@@ -53,3 +53,45 @@
 [submodule ".vim/bundle/ale"]
 	path = .vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule ".config/nvim/bundle/ale"]
+	path = .config/nvim/bundle/ale
+	url = https://github.com/w0rp/ale.git
+[submodule ".config/nvim/bundle/auto-pairs"]
+	path = .config/nvim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule ".config/nvim/bundle/dash.vim"]
+	path = .config/nvim/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git
+[submodule ".config/nvim/bundle/JavaScript-Indent"]
+	path = .config/nvim/bundle/JavaScript-Indent
+	url = https://github.com/vim-scripts/JavaScript-Indent.git
+[submodule ".config/nvim/bundle/nerdcommenter"]
+	path = .config/nvim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule ".config/nvim/bundle/nerdtree"]
+	path = .config/nvim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".config/nvim/bundle/python-mode"]
+	path = .config/nvim/bundle/python-mode
+	url = https://github.com/python-mode/python-mode.git
+[submodule ".config/nvim/bundle/supertab"]
+	path = .config/nvim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule ".config/nvim/bundle/vim-fugitive"]
+	path = .config/nvim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule ".config/nvim/bundle/vim-gitgutter"]
+	path = .config/nvim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule ".config/nvim/bundle/vim-javascript-syntax"]
+	path = .config/nvim/bundle/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule ".config/nvim/bundle/vim-markdown"]
+	path = .config/nvim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule ".config/nvim/bundle/vim-pathogen"]
+	path = .config/nvim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".config/nvim/bundle/VimCompletesMe"]
+	path = .config/nvim/bundle/VimCompletesMe
+	url = https://github.com/ajh17/VimCompletesMe.git
