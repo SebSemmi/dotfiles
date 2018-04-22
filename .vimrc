@@ -10,9 +10,9 @@ syntax enable           " enable syntax processing
 color smyck             " Colorscheme see https://github.com/hukl/Smyck-Color-Scheme
 " }}}
 " Spaces & Tabs {{{
-set tabstop=2           " 2 space tab
-set softtabstop=2       " 2 space tab
-set shiftwidth=2
+set tabstop=4           " 4 space tab
+set softtabstop=4       " 4 space tab
+set shiftwidth=4
 set expandtab           " use spaces for tabs
 set modelines=1
 filetype indent on
@@ -22,14 +22,14 @@ set nowrap
 set list listchars=tab:»·,trail:·
 " }}}
 " UI Layout {{{
-set number              " show line numbers
-"set relativenumber      " show relative line numbers
-set ruler               " column and line numbers
-set cursorline        " highlight current line
-set wildmenu            " display all matching files when tab-completion
-set showmatch           " higlight matching parenthesis
+set number                " show line numbers
+"set relativenumber        " show relative line numbers
+set ruler                 " column and line numbers
+set cursorline            " highlight current line
+set wildmenu              " display all matching files when tab-completion
+set showmatch             " higlight matching parenthesis
 :au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)    " Highlight characters behind the 80 chars margin
-set scrolloff=2         " minimum lines above/below cursor
+set scrolloff=2           " minimum lines above/below cursor
 " }}}
 " Status Bar {{{
 set laststatus=2                  " always show status bar
@@ -53,8 +53,6 @@ set foldenable          " don't fold files by default on open
 set foldlevelstart=10   " start with fold level of 10
 set foldnestmax=10      " max 10 depth
 set foldmethod=indent   " fold based on indent level
-" }}}
-" Line Shortcuts {{{
 " }}}
 " Leader Shortcuts {{{
 let mapleader=" "
@@ -103,8 +101,6 @@ augroup END
 " Close window if last remaining window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
-" Tmux {{{
-" }}}
 " Misc {{{
 set ttyfast                     " faster redraw
 set backspace=indent,eol,start
@@ -118,10 +114,6 @@ set noswapfile
 set nobackup
 set nowritebackup
 " }}}
-" MacVim {{{
-set guioptions-=r
-set guioptions-=L
-" }}}
 " Custom Funktions {{{
 " Strip trailing whitespaces on each save
 fun! <SID>StripTrailingWhitespaces()
@@ -132,9 +124,5 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 let g:ackprg = 'ag --nogroup --nocolor --column'
-" }}}
-" neovim {{{
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
 " }}}
 " vim:foldmethod=marker:foldlevel=0
