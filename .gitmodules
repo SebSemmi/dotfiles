@@ -71,9 +71,6 @@
 [submodule ".config/nvim/bundle/nerdtree"]
 	path = .config/nvim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".config/nvim/bundle/python-mode"]
-	path = .config/nvim/bundle/python-mode
-	url = https://github.com/python-mode/python-mode.git
 [submodule ".config/nvim/bundle/supertab"]
 	path = .config/nvim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
