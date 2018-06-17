@@ -129,4 +129,10 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 " }}}
+" vimr {{{
+if has("gui_vimr")
+    set guioptions-=r
+    set guioptions-=L
+endif
+" }}}
 " vim:foldmethod=marker:foldlevel=0
